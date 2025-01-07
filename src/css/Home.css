@@ -1,0 +1,88 @@
+.home-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    width: 30%;
+}
+
+.addinc-container form {
+    background-color: rgba(153, 96, 218, 0.801);
+    display: inline-block;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border: solid 1px black;
+    font-weight: 500;
+}
+
+.addinc-container input {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: #d9d9d9;
+}
+
+.addinc-container button {
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.addinc-container p {
+    color:rgb(185, 5, 5);
+}
+
+.das-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    border: solid 1px black;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.add2-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.add2-container form {
+    background-color: rgba(153, 96, 218, 0.801) ;
+    margin: 10px;
+    padding: 30px;
+    border-radius: 5px;
+    border: solid 1px black;
+    
+
+}
+
+.add2-container form [type='text'],[type='number'],[type='submit'],[id="dropdown"] {
+    display: block;
+    margin: 10px;
+    width: 90%;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #d9d9d9;
+}
+
+.add2-container form label{
+    font-weight: 500;
+    display: block;
+    margin: 10px;
+}
+
+.head-container {
+    background-color: rgba(153, 96, 218, 0.801);
+}
+
+.add2-container [type='radio'] {
+    display: inline-block;
+}
+
+.add2-container form [type='submit']{
+    background-color: rgba(99, 4, 207, 0.801);
+}
+
+.foo-container{
+    background-color: rgba(153, 96, 218, 0.801);
+}

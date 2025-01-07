@@ -1,0 +1,19 @@
+.nav-container{
+    background-color:rgba(153, 96, 218, 0.801);
+    display:flex;
+    width:1370px;
+    justify-content: end;
+    border-radius: 5px;
+}
+
+.nav-container ul li{
+    display: inline-block;
+    margin: 10px;
+    color: black;
+}
+
+.nav-container h1{
+    margin-right: auto;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
