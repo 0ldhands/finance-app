@@ -8,6 +8,7 @@
     border-radius: 5px;
     padding: 10px;
     font-weight: 500;
+    box-shadow: 5px 5px 5px  rgba(40, 1, 85, 0.801);
 }
 
 .form-container form label{
@@ -30,6 +31,7 @@
     width: 95%;
     padding: 5px;
     border-radius: 5px;
+    border: none;    
 }
 
 .form-container h1{

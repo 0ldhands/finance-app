@@ -1,17 +1,19 @@
 .home-container {
     display: grid;
-    grid-template-rows: 1fr;
-    width: 30%;
+    grid-template-columns: 1fr 3fr;
+    background-color: rgba(153, 96, 218, 0.801);
+    margin: 10px;
+    border-radius: 5px;
 }
 
 .addinc-container form {
-    background-color: rgba(153, 96, 218, 0.801);
+    background-color: rgba(99, 4, 207, 0.801);
     display: inline-block;
     padding: 5px;
     margin: 10px;
     border-radius: 10px;
-    border: solid 1px black;
     font-weight: 500;
+    box-shadow: 5px 5px 5px rgba(40, 1, 85, 0.801);
 }
 
 .addinc-container input {
@@ -31,6 +33,11 @@
     color:rgb(185, 5, 5);
 }
 
+/* .addinc-container h1{
+    color: rgba(37, 201, 37, 0.8);
+    text-shadow: 3px 3px 3px rgba(8, 78, 11, 0.8);
+} */
+
 .das-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -43,7 +50,9 @@
 .add2-container {
     display: flex;
     justify-content: center;
-
+    width: 500px;
+    position: relative;
+    left: 500px;
 }
 
 .add2-container form {
@@ -51,7 +60,7 @@
     margin: 10px;
     padding: 30px;
     border-radius: 5px;
-    border: solid 1px black;
+    box-shadow: 5px 5px 5px  rgba(40, 1, 85, 0.801);
     
 
 }
@@ -63,6 +72,7 @@
     border-radius: 5px;
     padding: 5px;
     background-color: #d9d9d9;
+    border: none;
 }
 
 .add2-container form label{
@@ -75,6 +85,11 @@
     background-color: rgba(153, 96, 218, 0.801);
 }
 
+.head-container h1{
+    text-shadow: 3px 3px 8px rgba(40, 1, 85, 0.801);
+}
+
+
 .add2-container [type='radio'] {
     display: inline-block;
 }
@@ -85,4 +100,28 @@
 
 .foo-container{
     background-color: rgba(153, 96, 218, 0.801);
+}
+
+.hist-container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    column-gap: 10px;
+    margin: 10px;
+}
+
+.g-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: rgba(153, 96, 218, 0.801);
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.graphs{
+    height: 450px;
+    width: 400px;
+    margin: 20px;
+    background-color:  #d9d9d9;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px  rgba(40, 1, 85, 0.801);
 }

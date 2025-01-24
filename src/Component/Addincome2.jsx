@@ -1,56 +1,70 @@
+import { useNavigate } from 'react-router-dom';
 import '../css/Register.css'
 import { useState } from 'react';
-import {useNavigate} from 'react-router-dom'
 
-const Addincome2 = () => {
+const Addincome2 = ({data}) => {
 
-  const navi=useNavigate();
+  const navi=useNavigate()
 
-  const [radio,setRadio]=useState();
-  const [name,setName]=useState();
-  const [accno,setAccno]=useState();
-  const [money,setMoney]=useState();
+  const[users,setUsers]=useState([]);
+  const[userinfo,setUserinfo]=useState({
+    name:'',
+    accno:'',
+    amount:'',
+    payment:''
+    
+  })
 
-  const radioClick=(e)=>{
-    setRadio(e.target.value);
-  }
 
-  const nav=()=>{
-    navi(-1)
-    console.log('hi')
-  }
-  
   const handleClick=(e)=>{
-    e.preventDefault()
-    nav()
+    const{name,value}=e.target
+    setUserinfo((crr)=>{
+      return({...crr,[name]:value})
+    })
   }
 
+  const addDetails=()=>{
+    setUsers((crr)=>[...crr,userinfo])
+    setUserinfo(()=>{
+      return({
+        name:'',
+        accno:'',
+        amount:'',
+        payment:''
+        
+      })
+    })
+    data({name:userinfo.name,accno:userinfo.accno,amount:userinfo.amount,payment:userinfo.payment})
+    navi(-1)
+  }
 
   return (
     <div className='add2-container'>
         <form>
           <h2>Add Income</h2>
-            <label htmlFor="name">Name <g>*</g></label>
-            <input type="text" id='name' onChange={(e)=>setName(e)} required/>
-            <label htmlFor="accno">Acc. No. <g>*</g></label>
-            <input type="number" id='accno' onChange={(e)=>setAccno(e)} required/>
+            <label htmlFor="name">Name <h5 style={{display:'inline'}}>*</h5></label>
+            <input type="text" name='name' value={userinfo.name} id='name' onChange={(e)=>handleClick(e)} required/>
+            <label htmlFor="accno">Acc. No. * </label>
+            <input type="number" name='accno' value={userinfo.accno} id='accno' onChange={(e)=>handleClick(e)} required/>
 
-            <label > Select Payment <g>*</g></label>
+            <label > Select Payment <h5 style={{display:'inline'}}>*</h5></label>
             <label htmlFor='payment1'>
-            <input type="radio" value='Cash' checked={radio == 'Cash'} onChange={(e)=>radioClick(e)} id='payment1'/>Cash</label>
+            <input type="radio" name='payment' value='Cash' onChange={(e)=>handleClick(e)} id='payment1'/>Cash</label>
             
             <label htmlFor='payment2'>
-            <input type="radio" value='Upi' checked={radio == 'Upi'} onChange={(e)=>radioClick(e)} id='payment2'/>Upi</label>
+            <input type="radio" name='payment' value='Upi' onChange={(e)=>handleClick(e)} id='payment2'/>Upi</label>
             
             <label htmlFor='payment3'>
-            <input type="radio" value='Card' checked={radio == 'Card'} onChange={(e)=>radioClick(e)} id='payment3'/>Card</label>
+            <input type="radio" name='payment' value='Card' onChange={(e)=>handleClick(e)} id='payment3'/>Card</label>
           
-            <label htmlFor="amount">Amount <g>*</g></label>
-            <input type="number" id='amount' onChange={(e)=>setMoney(e)} required/>
+            <label htmlFor="amount">Amount <h5 style={{display:'inline'}}>*</h5></label>
+            <input type="number" name='amount' value={userinfo.amount} id='amount' onChange={(e)=>handleClick(e)} required/>
             
-            <input type="submit" onClick={(e)=>handleClick(e)}/>
+            <input type="submit" onClick={addDetails}/>  
+            <p>{data}</p>
 
         </form>
+
     </div>
   )
 }

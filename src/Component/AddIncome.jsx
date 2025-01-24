@@ -1,31 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
+import {useNavigate}  from 'react-router-dom'
 import '../css/Home.css'
 
-const AddIncome = () => {
-  const [money, setMoney] = useState();
-  const [money2, setMoney2] = useState(0);
-  const [storeval, setStoreVal] = useState()
+const AddIncome = ({incVal,xVal,traVal}) => {
+  const [total,setTotal]=useState();
+  const navi=useNavigate()
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    if (money >= 500) {
-      setMoney2(Number(money2) + Number(money))
-      console.log(money2)
-    } else {
-      setStoreVal('You adding invalid amount,Try again')
-    }
-
+  const add=()=>{
+    setTotal(()=>{
+      let a=(incVal.reduce((tot,crr)=>tot+=Number(crr.amount)))
+      let b=(xVal.reduce((tot,crr)=>tot+=Number(crr.amount)))
+      let c=(traVal.reduce((tot,crr)=>tot+=Number(crr.amount)))
+      let sum=a-(b+c)
+      return sum
+    })
   }
-
+  
+  setInterval(add,1000);
 
   return (
     <div className='addinc-container'>
       <form>
-        <label htmlFor="avail">Available Balance : {money2}₹</label><br />
-        <input type="text" id='avail' onChange={(e) => setMoney(e.target.value)} />
-        <button onClick={(e) => handleClick(e)}>Add Money</button>
-        <p>{storeval}</p>
+        <label>Available Balance :</label><br />
+        {(total>500)? <h1 style={{textShadow: "3px 3px 3px rgba(8, 78, 11, 0.8)",color: "rgba(37, 201, 37, 0.8)"}}>{total} ₹</h1>: <h1 style={{textShadow: "3px 3px 3px rgba(109, 6, 6, 0.8)",color: "rgba(255, 0, 0, 0.8)"}}>{total} ₹</h1> }
       </form>
+      {(total<500)&& <p style={{color:'red',marginLeft:'5px'}}>Please add money to withdraw</p> }
     </div>
   )
 }

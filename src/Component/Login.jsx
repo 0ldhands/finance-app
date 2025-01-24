@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
+import '../css/Root.css'
 
-const Login = () => {
+const Login = ({val}) => {
     const [inputUsName, setInputUsName] = useState();
     const [inputPass1, setInputPass1] = useState();
     const [inputMsg, setInputMsg] = useState();
@@ -19,10 +20,12 @@ const Login = () => {
             userName: inputUsName,
             userPass1: inputPass1,
         }
+       
         const check = JSON.parse(localStorage.getItem(`${inputUsName}`))
 
         if (check.userName == inputUsName && check.userPass1 == inputPass1) {
             nav()
+            val(check.userName)
         } else {
             setInputMsg('invalid username or password')
         }
@@ -32,9 +35,9 @@ const Login = () => {
         <div className='form-container'>
             <h1>Login</h1>
             <form>
-                <label htmlFor="username">Username  <g>*</g></label>
+                <label htmlFor="username">Username  <h5 style={{display:'inline'}}>*</h5></label>
                 <input type="text" id='username' placeholder='Enter Name' required onChange={(e) => setInputUsName(e.target.value)} />
-                <label htmlFor="pass">Password  <g>*</g></label>
+                <label htmlFor="pass">Password  <h5 style={{display:'inline'}}>*</h5></label>
                 <input type="password" id='pass' placeholder='Enter Password' required onChange={(e) => setInputPass1(e.target.value)} />
                 <input type="submit" onClick={(e) => handleClick(e)} className='reg-btn' />
                 <p>You don't have an account create a account</p>
