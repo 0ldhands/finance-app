@@ -1,5 +1,6 @@
 import React from 'react'
 import  { useState,useEffect} from "react";
+import '../css/Home.css'
 
 import {
   Document,
@@ -100,13 +101,13 @@ useEffect(() => {
 
 const Tragenerator = ({val,val4}) => {
   return (
-    <div>Tragenerator
+    <div style={{margin:'5px'}}>
          <PDFDownloadLink
         document={<MyDocument3 arr={val} username={val4} />} // Pass the data to MyDocument
         fileName="report.pdf"
       >
         {({ loading }) =>
-          loading ? "Loading document..." : <button>Transaction Report</button>
+          loading ? "Loading document..." : <button className='re-btn'>Transaction Report</button>
         }
       </PDFDownloadLink>
     </div>

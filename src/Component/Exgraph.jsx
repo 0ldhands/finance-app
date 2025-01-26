@@ -15,7 +15,7 @@ import '../css/Home.css'
   const Exgraph = ({exg}) => {
    
     const[groc,setGroc]=useState(0);
-    const[food,setFood]=useState(0);
+    const[food,setFood]=useState(100);
     const[enter,setEnter]=useState(0);
     const[shop,setShop]=useState(0);
     const[other,setOther]=useState(0);
@@ -72,11 +72,12 @@ import '../css/Home.css'
             enabled: true,
           },
         },
-      };
+      }
+      
     
       return (
         <div className="graphs">
-          Incgraph
+          <h3 style={{textAlign:"center"}}>Expense Tracking</h3>
             <Pie data={data} options={options} />
         </div>
       );

@@ -1,4 +1,5 @@
 import  { useState,useEffect} from "react";
+import '../css/Home.css'
 
 import {
   Document,
@@ -42,11 +43,12 @@ const styles = StyleSheet.create({
 
 const MyDocument = ({ arr, username }) => {
   const [arrs, setArr] = useState([]);
-  const[usname,setUsname]=useState(username);
+  const[usname,setUsname]=useState('');
 
 useEffect(() => {
   const intervalId = setInterval(() => {
     setArr([...arr]);
+    setUsname(()=>username)
   }, 1000);
 
   // Cleanup interval on unmount
@@ -97,14 +99,13 @@ useEffect(() => {
 
 const Generator = ({ val,val4 }) => {
   return (
-    <div>
-      <h1>Generator</h1>
+    <div style={{margin:'5px'}}>
       <PDFDownloadLink
         document={<MyDocument arr={val} username={val4} />} 
         fileName="report.pdf"
       >
         {({ loading }) =>
-          loading ? "Loading document..." : <button>Income Report</button>
+          loading ? "Loading document..." : <button className='re-btn'>Income Report</button>
         }
       </PDFDownloadLink>
     </div>

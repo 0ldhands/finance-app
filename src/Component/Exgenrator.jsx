@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useState,useEffect} from "react";
+import '../css/Home.css'
 
 import {
   Document,
@@ -99,13 +100,13 @@ const MyDocument2 = ({ arr, username }) => {
 
 const Exgenrator = ({val,val4}) => {
   return (
-    <div>Exgenrator
+    <div style={{margin:'5px'}}>
         <PDFDownloadLink
                 document={<MyDocument2 arr={val} username={val4} />} // Pass the data to MyDocument
                 fileName="report.pdf"
               >
                 {({ loading }) =>
-                  loading ? "Loading document..." : <button>Expense Report</button>
+                  loading ? "Loading document..." : <button className='re-btn'>Expense Report</button>
                 }
               </PDFDownloadLink>
     </div>

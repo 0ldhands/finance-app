@@ -7,7 +7,7 @@
 }
 
 .addinc-container form {
-    background-color: rgba(99, 4, 207, 0.801);
+    background-color: rgba(99, 4, 207, 0.8);
     display: inline-block;
     padding: 5px;
     margin: 10px;
@@ -124,4 +124,24 @@
     background-color:  #d9d9d9;
     border-radius: 5px;
     box-shadow: 5px 5px 5px  rgba(40, 1, 85, 0.801);
+}
+
+.repo-container{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+}
+.gen-container{
+    justify-items: center;
+    background-color:rgba(153, 96, 218, 0.801);
+    margin-right: 10px;
+    align-content: center;
+    border-radius: 5px;
+}
+
+.re-btn{
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px;
+    font-weight: 700;
+    background-color: rgba(99, 4, 207, 0.801);
 }
